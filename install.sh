@@ -87,8 +87,7 @@ case $response in
     echo ""
     echo "Installing sudolikeaboss"
     brew tap ravenac95/sudolikeaboss
-    brew install sudolikeaboss sudolikeaboss-workaround
-    sudolikeaboss-setup-workaround
+    brew install sudolikeaboss
 
     echo ""
     echo "Installing brew packages"
@@ -242,6 +241,7 @@ case $response in
     )
 
     brew cask install ${fonts[@]}
+    brew cask cleanup
 
     echo ""
     echo "Installing all Google Web Fonts"
