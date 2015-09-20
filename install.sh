@@ -45,74 +45,44 @@ esac
 
 echo ""
 cecho "===================================================" $dark_gray
-cecho "Install oh-my-zsh? (y/n)" $gray
-cecho "===================================================" $dark_gray
-read -r response
-case $response in
-  [yY])
-    echo ""
-    echo "Installing oh-my-zsh"
-    curl -L https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh | sh
-
-    echo ""
-    echo "Installing oh-my-zsh"
-    mkdir -p ~/.oh-my-zsh/custom/plugins
-    cd ~/.oh-my-zsh/custom/plugins
-    git clone git://github.com/zsh-users/zsh-syntax-highlighting.git
-    cd ~
-
-    break;;
-
-  *) break;;
-esac
-
-echo ""
-cecho "===================================================" $dark_gray
 cecho "Install brew utilities? (y/n)" $gray
 cecho "===================================================" $dark_gray
 read -r response
 case $response in
   [yY])
     binaries=(
-      bash
-      coreutils
-      curl
-      findutils
-      figlet
-      ffmpeg
-      git
-      gitignore
-      heroku-toolbelt
-      htop
-      httpie
-      imagemagick
-      imagesnap
-      ncdu
-      pv
-      pyenv
-      pyenv-virtualenv
-      pyenv-virtualenvwrapper
-      rbenv
-      ruby-build
-      ssh-copy-id
+      ansible
+      hugo
+      ngrep
       youtube-dl
+      icdiff
+      nmap
+      zsh
+      git
+      mackup
+      tcptrace
+      git-flow
+      mobile-shell
+      tmux
+      brew-cask
+      moreutils
+      composer
+      grep
+      mtr
+      php-cs-fixer
+      coreutils
+      htop-osx
       watch
+      findutils
+      httpie
+      ncftp
+      rsync
       wget
+      httrack
+      netcat
+      TomAnthony/brews/itermocil
+      vim
     )
-
-    # Install latest version of hub
-    brew install --HEAD hub
-    
-    # Fix ffmpeg install
-    brew reinstall ffmpeg --with-faac
-
-    echo ""
-    echo "Tapping for Joe (for .gitignore)"
-    brew tap karan/karan
-    
-    echo ""
-    echo "Install iTerm2 layout helpers"
-    brew install TomAnthony/brews/itermocil
 
     echo ""
     echo "Installing sudolikeaboss"
@@ -121,15 +91,9 @@ case $response in
     sudolikeaboss-setup-workaround
 
     echo ""
-    echo "Installing GNU version of grep"
-    brew tap homebrew/dupes
-    brew install homebrew/dupes/grep
-    mkdir -p ~/bin
-    ln -s /usr/local/Cellar/grep/2.21/bin/ggrep ~/bin/ggrep
-
-    echo ""
     echo "Installing brew packages"
     brew install ${binaries[@]}
+    brew cleanup
 
     break;;
   *) break;;
@@ -137,102 +101,31 @@ esac
 
 echo ""
 cecho "===================================================" $dark_gray
-cecho "Install various versions of python? (y/n)" $gray
+cecho "Install oh-my-zsh? (y/n)" $gray
 cecho "===================================================" $dark_gray
 read -r response
 case $response in
   [yY])
     echo ""
-    cecho "Installing python versions" $gray
-    pyenv install 2.7.6
-    pyenv install 2.7.8
-    pyenv install 2.7.10
-    pyenve global 2.7.10
+    echo "Installing oh-my-zsh"
+    curl -L https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh | sh
     break;;
+
   *) break;;
 esac
 
 echo ""
 cecho "===================================================" $dark_gray
-cecho "Install python packages? (y/n)" $gray
+cecho "Install spf13-vim? (y/n)" $gray
 cecho "===================================================" $dark_gray
 read -r response
 case $response in
   [yY])
     echo ""
-    cecho "Installing some python packages" $gray
-    sudo pip install flake8 doge thefuck glances
+    echo "Installing spf13-vim"
+    curl http://j.mp/spf13-vim3 -L -o - | sh
     break;;
-  *) break;;
-esac
 
-echo ""
-cecho "===================================================" $dark_gray
-cecho "Install node and npm? (y/n)" $gray
-cecho "===================================================" $dark_gray
-read -r response
-case $response in
-  [yY])
-    echo ""
-    cecho "Installing node (without npm)" $gray
-    # For more info, see here https://gist.github.com/DanHerbert/9520689
-    brew install node --without-npm
-
-    echo ""
-    cecho "Installing nvm to manage node" $gray
-    curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.26.1/install.sh | bash
-    break;;
-  *) break;;
-esac
-
-echo ""
-cecho "===================================================" $dark_gray
-cecho "Install node/iojs versions? (y/n)" $gray
-cecho "===================================================" $dark_gray
-read -r response
-case $response in
-  [yY])
-    echo ""
-    cecho Installing node versions” $gray
-    . ~/.nvm/nvm.sh > /dev/null
-    nvm install iojs
-    nvm install 0.12
-    nvm alias stable 0.12
-    nvm alias default 0.12
-    nvm use 0.12
-     break;;
-  *) break;;
-esac
-
-echo ""
-cecho "===================================================" $dark_gray
-cecho "Install npm modules? (y/n)" $gray
-cecho "===================================================" $dark_gray
-read -r response
-case $response in
-  [yY])
-    echo ""
-    cecho "Installing some global modules" $gray
-    npm install -g bower bower-update
-    npm install -g caniuse-cmd clean-css coffee-script csslint
-    npm install -g empty-trash
-    npm install -g grunt grunt-cli gulp generator-gruntplugin
-    npm install -g hicat html-minifier http-server
-    npm install -g is-up
-    npm install -g js-beautify js2coffee jscs jspm
-    npm install -g keybase-installer
-    npm install -g less
-    npm install -g nodemon
-    npm install -g maildev markdown-live
-    npm install -g npm-check-updates npm-release
-    npm install -g peerflix perfschool public-ip
-    npm install -g release-it resume-cli
-    npm install -g standard speed-test surge svgo
-    npm install -g uglifycss uglify-js underscore-cli
-    npm install -g vtop
-    npm install -g wallpaper
-    npm install -g yo
-    break;;
   *) break;;
 esac
 
@@ -245,57 +138,83 @@ case $response in
   [yY])
     echo ""
     cecho "Installing cask" $gray
-    brew tap caskroom/versions
     brew install caskroom/cask/brew-cask
 
     echo ""
     echo "Installing brew-cask apps"
     apps=(
       1password
-      air-video-server-hd
+      adium
       alfred
+      anvil
       appcleaner
-      atom
-      bartender
-      beamer
       betterzipql
-      cinch
-      daisydisk
+      bittorrent-sync
+      caffeine
+      colloquy
+      comicbooklover
+      cyberduck
+      deezer
+      disk-inventory-x
       dropbox
+      electric-sheep
       evernote
+      feeds
       firefox
       firefoxdeveloperedition
-      flux
+      github-desktop
       google-chrome
-      google-chrome-canary
+      google-drive
+      google-earth
+      google-hangouts
+      google-photos-backup
+      gpgtools
+      hipchat
       imageoptim
-      istat-menus
-      iterm2-nightly
-      licecap
-      mailbox
-      mojibar
-      qlcolorcode
-      qlstephen
-      qlmarkdown
+      iterm2
+      kdiff3
+      keepassx
+      kitematic
+      lastfm
+      libreoffice
+      macvim
+      music-manager
+      notational-velocity
+      phpstorm
+      picasa
+      popcorn-time
+      qlimagesize
       qlprettypatch
+      qlstephen
       quicklook-csv
       quicklook-json
-      qlimagesize
-      sizeup
+      seashore
+      sequel-pro
+      sitesucker
       skitch
       skype
       slack
-      steam
+      sourcetree
+      sqlitebrowser
+      sublime-text
       suspicious-package
-      teamviewer
+      telegram
+      the-unarchiver
+      thunderbird
+      toggldesktop
+      torbrowser
       transmission
       vagrant
-      vlc
       virtualbox
+      viscosity
+      vlc
       webpquicklook
+      wercker
+      wercker-cli
+      wireshark
     )
 
-    brew cask install --appdir="/Applications" ${apps[@]}
+    brew cask install ${apps[@]}
     brew cask cleanup
     break;;
   *) break;;
