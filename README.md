@@ -1,8 +1,20 @@
-# osx-provision
+# OS X Provision
 
-## Prerequisites
+Provision a clean install of OS X.
 
-- XCode with Command Line Tools
+## Usage
+
+Install Xcode Command Line Tools:
+
+    xcode-select --install
+
+Clone this repository:
+
+    git clone git@github.com:kielabokkie/osx-provision.git
+
+Run the provisioning script:
+
+    ./provisioning.sh
 
 ----------
-Provision your mac with this shell script. Forked from https://github.com/brandonb927/dotfiles. I got the original idea for this from http://lapwinglabs.com/blog/hacker-guide-to-setting-up-your-mac. Tested with OS X Yosemite 10.10.5.
+Provision your Mac with this shell script. Forked from https://github.com/alrayyes/osx-provision who forked it from https://github.com/brandonb927/dotfiles. Tested with OS X El Capitan 10.11.
