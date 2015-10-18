@@ -10,11 +10,13 @@ Install Xcode Command Line Tools:
 
 Clone this repository:
 
-    git clone git@github.com:kielabokkie/osx-provision.git
+    git clone https://github.com/kielabokkie/osx-provision.git
 
 Run the provisioning script:
 
-    ./provisioning.sh
+    cd osx-provision && ./provisioning.sh
 
 ----------
-Provision your Mac with this shell script. Forked from https://github.com/alrayyes/osx-provision who forked it from https://github.com/brandonb927/dotfiles. Tested with OS X El Capitan 10.11.
+Provision your Mac with this shell script. Forked from https://github.com/alrayyes/osx-provision who forked it from https://github.com/brandonb927/dotfiles.
+
+Tested with OS X El Capitan 10.11.
