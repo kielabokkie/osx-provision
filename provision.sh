@@ -148,7 +148,7 @@ case $response in
       sequel-pro
       sourcetree
       spectacle
-      spotity
+      spotify
       sublime-text3
       toggldesktop
       ubersicht
@@ -162,7 +162,7 @@ case $response in
     brew cask cleanup
 
     # Move Chrome to the main /Applications folder or else plugins won't work properly
-    rm /Applications/Google\ Chrome.app
+    sudo rm -rf /Applications/Google\ Chrome.app
     sudo cp -R /opt/homebrew-cask/Caskroom/google-chrome/latest/Google\ Chrome.app /Applications
 
     break;;
@@ -247,12 +247,12 @@ case $response in
 
     dockutil --add /Applications/Calendar.app --position 3 --no-restart
     dockutil --add /Applications/Clear.app --position 4 --no-restart
-    # dockutil --add /Applications/Spotify.app --position 5 --no-restart
+    dockutil --add /opt/homebrew-cask/Caskroom/spotify/latest/Spotify.app --position 5 --no-restart
 
-    # dockutil --add /Applications/Twitter.app --position 7 --no-restart
+    dockutil --add /Applications/Twitter.app --position 7 --no-restart
     dockutil --add /Applications/Messages.app --position 8 --no-restart
-    # dockutil --add /Applications/Slack.app --position 9 --no-restart
-    # dockutil --add /Applications/Mailbox.app --position 10 --no-restart
+    dockutil --add /Applications/Slack.app --position 9 --no-restart
+    dockutil --add /opt/homebrew-cask/Caskroom/mailbox/0.7.6/Mailbox\ \(Beta\).app --position 10 --no-restart
     
     dockutil --add /opt/homebrew-cask/Caskroom/sequel-pro/1.1/Sequel\ Pro.app --position 12 --no-restart
     dockutil --add /opt/homebrew-cask/Caskroom/iterm2/2.1.4/iTerm.app --position 13 --no-restart
