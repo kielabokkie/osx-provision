@@ -100,6 +100,7 @@ case $response in
       hugo
       httpie
       dockutil
+      cheat
     )
 
     brew install ${binaries[@]}
