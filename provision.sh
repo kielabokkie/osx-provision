@@ -254,11 +254,10 @@ case $response in
     dockutil --add /Applications/Twitter.app --position 7 --no-restart
     dockutil --add /Applications/Messages.app --position 8 --no-restart
     dockutil --add /Applications/Slack.app --position 9 --no-restart
-    dockutil --add /opt/homebrew-cask/Caskroom/mailbox/0.7.6/Mailbox\ \(Beta\).app --position 10 --no-restart
 
-    dockutil --add /opt/homebrew-cask/Caskroom/sequel-pro/1.1/Sequel\ Pro.app --position 12 --no-restart
-    dockutil --add /opt/homebrew-cask/Caskroom/iterm2/2.1.4/iTerm.app --position 13 --no-restart
-    dockutil --add /opt/homebrew-cask/Caskroom/sublime-text3/Build\ 3083/Sublime\ Text.app --position 14 --no-restart
+    dockutil --add /opt/homebrew-cask/Caskroom/sequel-pro/1.1/Sequel\ Pro.app --position 11 --no-restart
+    dockutil --add /opt/homebrew-cask/Caskroom/iterm2/2.1.4/iTerm.app --position 12 --no-restart
+    dockutil --add /opt/homebrew-cask/Caskroom/sublime-text3/Build\ 3083/Sublime\ Text.app --position 13 --no-restart
 
     /usr/bin/killall -HUP Dock >/dev/null 2>&1
 
