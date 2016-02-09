@@ -32,6 +32,7 @@ case $response in
     brew doctor
     brew tap homebrew/dupes
     brew tap homebrew/versions
+    brew update
     break;;
   *) break;;
 esac
