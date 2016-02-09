@@ -57,9 +57,11 @@ case $response in
     mas install 981117463  # Chatty
     mas install 504544917  # Clear
     mas install 926707738  # Countdowns
+    mas install 686910553  # Daily
     mas install 961850017  # Gifs
+    mas install 506189836  # Harvest
     mas install 449830122  # HyperDock
-    mas install 939343785  # Icon Set Creator
+    mas install 439697913  # Icon Slate
     mas install 409183694  # Keynote
     mas install 451444120  # Memory Clean
     mas install 915542151  # Monity
@@ -68,8 +70,10 @@ case $response in
     mas install 928494006  # PopHub
     mas install 507257563  # Sip
     mas install 803453959  # Slack
+    mas install 870659406  # Stache
     mas install 747648890  # Telegram
-    mas install 1017047129 # Timeless
+    mas install 585829637  # Todoist
+    mas install 409789998  # Twitter
     mas install 870659406  # Stache
     mas install 425424353  # The Unarchiver
     mas install 409789998  # Twitter
@@ -121,10 +125,6 @@ case $response in
     cecho "Installing cask" $light_blue
     brew install caskroom/cask/brew-cask
 
-    cecho "Tapping dupes and versions repos" $light_blue
-    brew tap caskroom/dupes
-    brew tap caskroom/versions
-
     echo ""
     cecho "Installing brew-cask apps" $light_blue
     apps=(
@@ -136,7 +136,6 @@ case $response in
       google-drive
       imageoptim
       iterm2
-      mailbox
       mou
       node
       nvalt
@@ -151,7 +150,7 @@ case $response in
       spectacle
       spotify
       sublime-text3
-      toggldesktop
+      tower
       ubersicht
       vagrant
       virtualbox
@@ -179,7 +178,9 @@ case $response in
   [yY])
     echo ""
     cecho "Installing PHP" $light_blue
-    curl -s http://php-osx.liip.ch/install.sh | bash -s 5.6
+    brew tap homebrew/homebrew-php
+    brew install php70
+    brew install brew-php-switcher
 
     echo ""
     cecho "Installing Composer" $light_blue
@@ -254,7 +255,7 @@ case $response in
     dockutil --add /Applications/Messages.app --position 8 --no-restart
     dockutil --add /Applications/Slack.app --position 9 --no-restart
     dockutil --add /opt/homebrew-cask/Caskroom/mailbox/0.7.6/Mailbox\ \(Beta\).app --position 10 --no-restart
-    
+
     dockutil --add /opt/homebrew-cask/Caskroom/sequel-pro/1.1/Sequel\ Pro.app --position 12 --no-restart
     dockutil --add /opt/homebrew-cask/Caskroom/iterm2/2.1.4/iTerm.app --position 13 --no-restart
     dockutil --add /opt/homebrew-cask/Caskroom/sublime-text3/Build\ 3083/Sublime\ Text.app --position 14 --no-restart
